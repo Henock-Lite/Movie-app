@@ -1,8 +1,8 @@
-@use"../settings" as *;
+@use "../settings" as *;
 .form-component {
   .form-container {
     text-align: center;
-  }  
+  }
   form {
     width: 300px;
     margin: 0 auto;
@@ -50,12 +50,27 @@
     #goodToBad,
     #badToGood {
       background: $color-1;
+      font-size: 2rem;
       width: 110px;
       transition: 0.3s;
       position: relative;
 
       &:hover {
         background: $black;
+      }
+
+      strong{
+        font-weight: normal;
+        font-size: .8em;
+        text-transform: capitalize;
+      }
+
+      .topword{
+        margin-right: 5px;
+      }
+
+      .flopword{
+        margin-left: 5px;
       }
     }
     #goodToBad span {

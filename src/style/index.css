@@ -240,6 +240,7 @@ li {
 .form-component .btn-sort-container #goodToBad,
 .form-component .btn-sort-container #badToGood {
   background: #546fe4;
+  font-size: 2rem;
   width: 110px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -248,6 +249,20 @@ li {
 .form-component .btn-sort-container #goodToBad:hover,
 .form-component .btn-sort-container #badToGood:hover {
   background: #060d2c;
+}
+.form-component .btn-sort-container #goodToBad strong,
+.form-component .btn-sort-container #badToGood strong {
+  font-weight: normal;
+  font-size: 0.8em;
+  text-transform: capitalize;
+}
+.form-component .btn-sort-container #goodToBad .topword,
+.form-component .btn-sort-container #badToGood .topword {
+  margin-right: 5px;
+}
+.form-component .btn-sort-container #goodToBad .flopword,
+.form-component .btn-sort-container #badToGood .flopword {
+  margin-left: 5px;
 }
 .form-component .btn-sort-container #goodToBad span {
   -webkit-transform: translateY(-50%) rotate(-90deg);
