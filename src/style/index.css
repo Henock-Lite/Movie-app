@@ -51,7 +51,7 @@ li {
   display: -ms-flexbox;
   display: flex;
 }
-.header nav ul a {
+.header nav ul li a {
   text-decoration: none;
   color: rgb(238, 238, 238);
   border-radius: 10px;
@@ -59,17 +59,17 @@ li {
   text-align: center;
   margin-right: 5px;
 }
-.header nav ul a:visited {
+.header nav ul li a:visited {
   text-decoration: none;
   color: rgb(238, 238, 238);
 }
-.header nav ul a:hover {
+.header nav ul li a:hover {
   background: #060d2c;
 }
-.header nav ul a.nav-active {
+.header nav ul li a.nav-active {
   background: #546fe4;
 }
-.header nav ul a.nav-active:hover {
+.header nav ul li a.nav-active:hover {
   background: #060d2c;
 }
 

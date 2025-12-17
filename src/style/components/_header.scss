@@ -1,4 +1,4 @@
-@use"../settings" as *;
+@use "../settings" as *;
 .header {
   h1 {
     font-size: 3.3rem;
@@ -14,28 +14,29 @@
 
     ul {
       display: flex;
-
-      a {
-        text-decoration: none;
-        color: $white;
-        border-radius: 10px;
-        width: 102px;
-        text-align: center;
-        margin-right: 5px;
-
-        &:visited {
+      li {
+        a {
           text-decoration: none;
           color: $white;
-        }
-        &:hover {
-          background: $black;
-        }
-      }
-      a.nav-active {
-        background: $color-1;
+          border-radius: 10px;
+          width: 102px;
+          text-align: center;
+          margin-right: 5px;
 
-        &:hover {
-          background: $black;
+          &:visited {
+            text-decoration: none;
+            color: $white;
+          }
+          &:hover {
+            background: $black;
+          }
+        }
+        a.nav-active {
+          background: $color-1;
+
+          &:hover {
+            background: $black;
+          }
         }
       }
     }
