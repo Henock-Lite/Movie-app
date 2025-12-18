@@ -73,6 +73,12 @@ li {
   background: #060d2c;
 }
 
+.parent-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .card {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 25%;

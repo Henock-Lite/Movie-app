@@ -13,26 +13,42 @@ const Card = () => {
       .catch((err) => console.error(err));
   }, []);
   return (
-    <div className="card">
-      <img src="" alt="" />
-      <h2>titre</h2>
-      <h5>sortie</h5>
-      <h4>
-        6<span>🌟</span>
-      </h4>
-      <ul>
-        <li>action</li>
-      </ul>
+    <div className="parent-card">
+      {movie.map((datamovie) => (
+        <div className="card" key={datamovie.id}>
+          <img
+            src={`https://image.tmdb.org/t/p/w500/.${datamovie.backdrop_path}`}
+            alt={datamovie.original_title}
+          />
+          <h2>{datamovie.original_title}</h2>
+          <h5>sortie: {datamovie.release_date}</h5>
+          <h4></h4>
+          <ul>
+            <li></li>
+          </ul>
+        </div>
+      ))}
+      {/* <div className="card">
+        <img src="" alt="" />
+        <h2>titre</h2>
+        <h5>sortie</h5>
+        <h4>
+          6<span>🌟</span>
+        </h4>
+        <ul>
+          <li>action</li>
+        </ul>
 
-      <h3>synopsie</h3>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem
-        incidunt, corporis ipsum impedit alias quidem repellendus distinctio ea
-        sapiente illum atque nemo? Debitis excepturi suscipit reprehenderit
-        voluptates nihil nam perspiciatis.
-      </p>
+        <h3>synopsie</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem
+          incidunt, corporis ipsum impedit alias quidem repellendus distinctio
+          ea sapiente illum atque nemo? Debitis excepturi suscipit reprehenderit
+          voluptates nihil nam perspiciatis.
+        </p>
 
-      <button className="btn">ajouter fav</button>
+        <button className="btn">ajouter fav</button>
+      </div> */}
     </div>
   );
 };

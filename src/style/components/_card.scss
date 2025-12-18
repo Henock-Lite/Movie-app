@@ -1,5 +1,7 @@
 @use"../settings" as *;
-
+.parent-card{
+  display: flex;
+}
 .card {
   flex: 1 0 25%;
   min-width: 260px;
