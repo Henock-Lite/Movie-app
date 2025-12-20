@@ -91,9 +91,34 @@ VITE_TMDB_API_KEY=your_api_key_here
 Exemple de requête :
 
 ```txt
+/search/movie
+
 https://api.themoviedb.org/3/search/movie?query=Jack+Reacher&language=fr-FR
 ```
 
+/genre/movie/list
+
+Exemples de requêtes
+
+1️⃣ Rechercher des films :
+
+https://api.themoviedb.org/3/search/movie?query=Jack+Reacher&language=fr-FR&api_key=YOUR_API_KEY
+
+
+2️⃣ Récupérer la liste des genres :
+
+https://api.themoviedb.org/3/genre/movie/list?api_key=YOUR_API_KEY&language=fr-FR
+
+
+Exemple de réponse :
+
+{
+  "genres": [
+    { "id": 28, "name": "Action" },
+    { "id": 12, "name": "Aventure" },
+    { "id": 16, "name": "Animation" }
+  ]
+}
 ---
 
 ## 🖼️ Support de démarrage
