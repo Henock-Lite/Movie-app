@@ -30,7 +30,7 @@ const Card = () => {
         <div className="card" key={datamovie.id}>
           <img
             src={`https://image.tmdb.org/t/p/w500/.${datamovie.backdrop_path}`}
-            alt={datamovie.original_title}
+            alt={"image du film : "+ datamovie.original_title}
           />
           <h2>{datamovie.original_title}</h2>
           <h5>sortie: {datamovie.release_date}</h5>

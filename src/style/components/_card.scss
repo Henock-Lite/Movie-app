@@ -1,6 +1,9 @@
-@use"../settings" as *;
-.parent-card{
+@use "../settings" as *;
+.parent-card {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
 }
 .card {
   flex: 1 0 25%;

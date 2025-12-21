@@ -84,15 +84,9 @@ VITE_TMDB_API_KEY=your_api_key_here
 
 ## 🔗 Endpoints TMDB utilisés
 
-```txt
-/search/movie
-```
-
 Exemple de requête :
-
-```txt
 /search/movie
-
+```txt
 https://api.themoviedb.org/3/search/movie?query=Jack+Reacher&language=fr-FR
 ```
 ```txt
