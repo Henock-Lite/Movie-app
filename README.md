@@ -95,23 +95,24 @@ Exemple de requête :
 
 https://api.themoviedb.org/3/search/movie?query=Jack+Reacher&language=fr-FR
 ```
-
+```txt
 /genre/movie/list
 
 Exemples de requêtes
 
 1️⃣ Rechercher des films :
-
+```txt
 https://api.themoviedb.org/3/search/movie?query=Jack+Reacher&language=fr-FR&api_key=YOUR_API_KEY
-
+```
 
 2️⃣ Récupérer la liste des genres :
-
+```txt
 https://api.themoviedb.org/3/genre/movie/list?api_key=YOUR_API_KEY&language=fr-FR
 
+```
 
 Exemple de réponse :
-
+```txt
 {
   "genres": [
     { "id": 28, "name": "Action" },
@@ -119,6 +120,8 @@ Exemple de réponse :
     { "id": 16, "name": "Animation" }
   ]
 }
+
+```
 ---
 
 ## 🖼️ Support de démarrage
