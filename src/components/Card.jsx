@@ -5,6 +5,22 @@ const Card = () => {
   const TMDB_API_KEY = import.meta.env.VITE_TMDB_API_KEY;
   const [movie, setMovie] = useState([]);
   const [genre, setGenre] = useState({});
+
+  const Dateformater = (date) => {
+    let newDate = new Date(date).toLocaleDateString("fr-FR", {
+      year: "numeric",
+      month: "numeric",
+      day: "numeric",
+    });
+    return newDate;
+  };
+
+  const Numberformater = (number) => {
+    let numnotation = number.toFixed(1);
+    return numnotation;
+  };
+
+
   useEffect(() => {
     axios
       .get(
@@ -24,18 +40,19 @@ const Card = () => {
         setGenre(map);
       });
   }, []);
+
   return (
     <div className="parent-card">
       {movie.map((datamovie) => (
         <div className="card" key={datamovie.id}>
           <img
             src={`https://image.tmdb.org/t/p/w500/.${datamovie.backdrop_path}`}
-            alt={"image du film : "+ datamovie.original_title}
+            alt={"image du film : " + datamovie.title}
           />
-          <h2>{datamovie.original_title}</h2>
-          <h5>sortie: {datamovie.release_date}</h5>
+          <h2>{datamovie.title}</h2>
+          <h5>Sortie: {Dateformater(datamovie.release_date)}</h5>
           <h4>
-            {datamovie.vote_average}/10 <span>🌟</span>
+            {Numberformater(datamovie.vote_average)}/10 <span>🌟</span>
           </h4>
 
           <ul>
