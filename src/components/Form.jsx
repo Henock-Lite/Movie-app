@@ -1,5 +1,5 @@
 import React from "react";
-const Form = () => {
+const Form = ({}) => {
   return (
     <div className="form-component">
       <div className="form-container">
@@ -15,5 +15,7 @@ const Form = () => {
     </div>
   );
 };
+
+// onSubmit={handlesubmit()}
 
 export default Form;

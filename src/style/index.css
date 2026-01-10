@@ -198,6 +198,7 @@ li {
   -webkit-box-shadow: 0 0 10px rgba(84, 110, 228, 0.8235294118);
           box-shadow: 0 0 10px rgba(84, 110, 228, 0.8235294118);
   font-size: 1.025rem;
+  color: white;
 }
 
 .form-component .form-container {
