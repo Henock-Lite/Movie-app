@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 const Card = ({ datamovie, genre }) => {
   const Dateformater = (date) => {
     let newDate = new Date(date).toLocaleDateString("fr-FR", {

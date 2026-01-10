@@ -1,17 +1,19 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Form from "../components/Form";
 import Card from "../components/Card";
+import { useEffect, useState } from "react";
 
 const Home = () => {
   const TMDB_API_KEY = import.meta.env.VITE_TMDB_API_KEY;
   const [movie, setMovie] = useState([]);
   const [genre, setGenre] = useState({});
+  const [query, setQuery] = useState("code");
+
   useEffect(() => {
     axios
       .get(
-        `https://api.themoviedb.org/3/search/movie?api_key=${TMDB_API_KEY}&query=code&language=fr-FR`
+        `https://api.themoviedb.org/3/search/movie?api_key=${TMDB_API_KEY}&query=${query}e&language=fr-FR`
       )
       .then((res) => setMovie(res.data.results))
       .catch((err) => console.error(err));
@@ -26,11 +28,15 @@ const Home = () => {
         });
         setGenre(map);
       });
-  }, []);
+  }, [query]);
+
+  const queryfunction = (valueofquery) => {
+    setQuery(valueofquery);
+  };
   return (
     <div>
       <Header />
-      <Form/>
+      <Form queryfunction={queryfunction} />
       <div className="parent-card">
         {movie.map((datamovie) => (
           <Card key={datamovie.id} datamovie={datamovie} genre={genre} />
