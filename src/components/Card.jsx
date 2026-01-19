@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const Card = ({ datamovie, genre }) => {
   const Dateformater = (date) => {
@@ -14,6 +14,7 @@ const Card = ({ datamovie, genre }) => {
     let numnotation = number.toFixed(1);
     return numnotation;
   };
+
 
   return (
     <div>

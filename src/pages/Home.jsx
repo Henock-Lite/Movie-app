@@ -36,7 +36,7 @@ const Home = () => {
   return (
     <div>
       <Header />
-      <Form queryfunction={queryfunction} />
+      <Form queryfunction={queryfunction} movie={movie}  setMovie={setMovie}/>
       <div className="parent-card">
         {movie.map((datamovie) => (
           <Card key={datamovie.id} datamovie={datamovie} genre={genre} />
