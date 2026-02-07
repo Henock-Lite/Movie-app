@@ -9,17 +9,21 @@ const Home = () => {
   const [movie, setMovie] = useState([]);
   const [genre, setGenre] = useState({});
   const [query, setQuery] = useState("code");
+  // console.log( [...movie]);
+ 
 
   useEffect(() => {
     axios
       .get(
-        `https://api.themoviedb.org/3/search/movie?api_key=${TMDB_API_KEY}&query=${query}e&language=fr-FR`
+        `https://api.themoviedb.org/3/search/movie?api_key=${TMDB_API_KEY}&query=${query}e&language=fr-FR`,
       )
-      .then((res) => setMovie(res.data.results))
+      .then((res) => {
+        setMovie(res.data.results);
+      })
       .catch((err) => console.error(err));
     axios
       .get(
-        `https://api.themoviedb.org/3/genre/movie/list?api_key=${TMDB_API_KEY}&language=fr-FR`
+        `https://api.themoviedb.org/3/genre/movie/list?api_key=${TMDB_API_KEY}&language=fr-FR`,
       )
       .then((res) => {
         const map = {};
@@ -36,7 +40,7 @@ const Home = () => {
   return (
     <div>
       <Header />
-      <Form queryfunction={queryfunction} movie={movie}  setMovie={setMovie}/>
+      <Form queryfunction={queryfunction} movie={movie} setMovie={setMovie} />
       <div className="parent-card">
         {movie.map((datamovie) => (
           <Card key={datamovie.id} datamovie={datamovie} genre={genre} />

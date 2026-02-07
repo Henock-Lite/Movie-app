@@ -5,7 +5,7 @@ const Form = ({ queryfunction, movie, setMovie }) => {
     e.preventDefault();
     queryfunction(inputvalue);
   };
-  µ;
+  
   const handlechange = (e) => {
     setInputvalue(e.target.value);
   };
@@ -27,15 +27,15 @@ const Form = ({ queryfunction, movie, setMovie }) => {
           <input type="text" onChange={handlechange} />
           <input type="submit" value="Recherche" />
           <div className="btn-sort-container">
-            <span id="goodToBad">
-              <strong className="topword" onClick={topfiltert}>
+            <span id="goodToBad" onClick={topfiltert}>
+              <strong className="topword">
                 top
               </strong>
               &#9650;
             </span>
-            <span id="badToGood">
+            <span id="badToGood" onClick={flopfilter}>
               &#9660;
-              <strong className="flopword" onClick={flopfilter}>
+              <strong className="flopword">
                 flop
               </strong>
             </span>
