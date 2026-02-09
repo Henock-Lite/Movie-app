@@ -1,16 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const Card = ({ datamovie, genre }) => {
-  const [isFavorite, setIsFavorite] = useState(false);
-
   useEffect(() => {
-    const storedData = window.localStorage.getItem("datamovie")
+    window.localStorage.getItem("datamovie")
       ? JSON.parse(window.localStorage.getItem("datamovie"))
       : [];
-
-    if (storedData.includes(datamovie.id)) {
-      setIsFavorite(true);
-    }
   }, [datamovie.id]);
 
   const addstorage = () => {
@@ -21,7 +15,6 @@ const Card = ({ datamovie, genre }) => {
     if (!storedData.includes(datamovie.id)) {
       storedData.push(datamovie.id);
       window.localStorage.setItem("datamovie", JSON.stringify(storedData));
-      setIsFavorite(true);
       alert("Film ajouté aux coups de coeur 💖  ");
     } else {
       alert("Ce film est déjà dans vos coups de coeur 🌟");
