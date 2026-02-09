@@ -13,7 +13,7 @@ const Card = ({ datamovie, genre }) => {
     }
   }, [datamovie.id]);
 
-  const handleClick = () => {
+  const addstorage = () => {
     let storedData = window.localStorage.getItem("datamovie")
       ? JSON.parse(window.localStorage.getItem("datamovie"))
       : [];
@@ -21,10 +21,23 @@ const Card = ({ datamovie, genre }) => {
     if (!storedData.includes(datamovie.id)) {
       storedData.push(datamovie.id);
       window.localStorage.setItem("datamovie", JSON.stringify(storedData));
-      setIsFavorite(true); 
+      setIsFavorite(true);
       alert("Film ajouté aux coups de coeur 💖  ");
     } else {
       alert("Ce film est déjà dans vos coups de coeur 🌟");
+    }
+  };
+
+  const deletestorage = () => {
+    if (
+      window.confirm(
+        "Voulez-vous vraiment supprimer ce film de vos coups de cœur ?",
+      )
+    ) {
+      let storedData = JSON.parse(localStorage.getItem("datamovie"));
+      let newData = storedData.filter((id) => id != datamovie.id);
+      window.localStorage.setItem("datamovie", JSON.stringify(newData));
+      window.location.reload();
     }
   };
 
@@ -63,9 +76,10 @@ const Card = ({ datamovie, genre }) => {
         </h4>
 
         <ul>
-          {datamovie.genre_ids.map((id) => (
-            <li key={id}>{genre[id]}</li>
-          ))}
+          {datamovie.genre_ids
+            ? datamovie.genre_ids.map((id) => <li key={id}>{genre[id]}</li>)
+            : datamovie.genres &&
+              datamovie.genres.map((g) => <li key={g.id}>{g.name}</li>)}
         </ul>
         <h3>Synopsie</h3>
         <p>
@@ -73,11 +87,20 @@ const Card = ({ datamovie, genre }) => {
             ? datamovie.overview
             : "Pas d'informations disponible"}
         </p>
-        <div>
-          <button className="btn" onClick={handleClick}>
-            Ajouter aux coups de coeur
-          </button>
-        </div>
+
+        {datamovie.genre_ids ? (
+          <div>
+            <button className="btn" onClick={addstorage}>
+              Ajouter aux coups de coeur
+            </button>
+          </div>
+        ) : (
+          <div>
+            <button className="btn" onClick={deletestorage}>
+              supprimer de la liste
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

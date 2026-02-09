@@ -9,7 +9,7 @@ const Home = () => {
   const [movie, setMovie] = useState([]);
   const [genre, setGenre] = useState({});
   const [query, setQuery] = useState("code");
-  // console.log( [...movie]);
+  
  
 
   useEffect(() => {
